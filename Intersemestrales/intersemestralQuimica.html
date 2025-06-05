@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intersemestral Química Orgánica</title>
+    <link rel="stylesheet" href="../stylePrincipal.css">
+    <link rel="stylesheet" href="styleIntersemestral.css">
+</head>
+
+<body>
+    <div class="imagenUptc">
+        <a href="../inscripcion.html">
+            <img src="../logos/logoUPTC.svg" width="300px">
+        </a>
+    </div>
+
+    <nav class="menu">
+        <ul>
+            <li>
+                <a href="../inscripcion.html">Menú Principal ▼</a>
+                <ul class="submenu">
+                    <li><a href="../inscripcion.html#cursos">Cursos Disponibles</a></li>
+                    <li><a href="../procesoInscripcion.html">Proceso de Inscripción</a></li>
+                    <li><a href="../horarios.html">Horarios y Fechas</a></li>
+                    <li><a href="../inscripcion.html#contacto">Contacto</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="tittleOne">
+        <header>
+            <h1>Química Orgánica</h1>
+            <h3>Inscripción al curso intersemestral</h3>
+        </header>
+    </div>
+
+    <section class="informacion">
+        <div class="main-card">
+            <h2>Información del Curso</h2>
+            <div class="instructor-info">
+                <img src="../logos/profesor.jpg" alt="Profesor">
+                <div>
+                    <h3>Ing. David Guerrero</h3>
+                    <p>Profesor de Química - Departamento de Ciencias Básicas</p>
+                </div>
+            </div>
+            <div class="schedule-info">
+                <p><strong>Duración:</strong> 4 semanas</p>
+                <p><strong>Horario:</strong> Lunes a Viernes, 7:00 AM - 9:00 AM</p>
+                <p><strong>Modalidad:</strong> Presencial</p>
+                <p><strong>Cupos disponibles:</strong> 15</p>
+            </div>
+            <div class="price-tag">
+                Valor: $250.000 COP
+            </div>
+            <div class="metodos-pago" style="display:flex;justify-content:center;gap:1.5rem;margin-top:1rem;">
+                <img src="../logos/nequi.jpeg" alt="Nequi" style="height:40px;">
+                <img src="../logos/bancolombia.svg" alt="Bancolombia" style="height:40px;">
+                <img src="../logos/mastercard-4.svg" alt="Mastercard" style="height:40px;">
+                <img src="../logos/visa-10.svg" alt="Visa" style="height:40px;">
+            </div>
+        </div>
+
+        <div class="sub-cards">
+            <div class="sub-card" onclick="this.classList.toggle('selected')">
+                <h3>Hidrocarburos</h3>
+                <p>• Alcanos y alquenos</p>
+                <p>• Grupos funcionales</p>
+            </div>
+            <div class="sub-card" onclick="this.classList.toggle('selected')">
+                <h3>Nomenclatura IUPAC</h3>
+                <p>• Reglas de nomenclatura</p>
+                <p>• Compuestos orgánicos</p>
+            </div>
+            <div class="sub-card" onclick="this.classList.toggle('selected')">
+                <h3>Reacciones Orgánicas</h3>
+                <p>• Sustitución</p>
+                <p>• Eliminación</p>
+            </div>
+            <div class="sub-card" onclick="this.classList.toggle('selected')">
+                <h3>Estereoquímica</h3>
+                <p>• Isomería</p>
+                <p>• Quiralidad</p>
+            </div>
+        </div>
+
+        <form class="registration-form" id="registrationForm">
+            <h3>Formulario de Inscripción</h3>
+            
+            <div class="form-group">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <span class="error-message">Por favor ingrese su nombre completo</span>
+            </div>
+
+            <div class="form-group">
+                <label for="codigo">Código Estudiantil</label>
+                <input type="text" id="codigo" name="codigo" required>
+                <span class="error-message">Por favor ingrese su código estudiantil</span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message">Por favor ingrese un correo válido</span>
+            </div>
+
+            <div class="form-group">
+                <label for="programa">Programa Académico</label>
+                <select id="programa" name="programa" required>
+                    <option value="">Seleccione su programa</option>
+                    <option value="sistemas">Ingeniería de Sistemas</option>
+                    <option value="electronica">Ingeniería Electrónica</option>
+                    <option value="industrial">Ingeniería Industrial</option>
+                    <option value="civil">Ingeniería Civil</option>
+                </select>
+                <span class="error-message">Por favor seleccione su programa</span>
+            </div>
+
+            <div class="form-group">
+                <label for="semestre">Semestre Actual</label>
+                <select id="semestre" name="semestre" required>
+                    <option value="">Seleccione su semestre</option>
+                    <option value="1">Primer semestre</option>
+                    <option value="2">Segundo semestre</option>
+                    <option value="3">Tercer semestre</option>
+                    <option value="4">Cuarto semestre</option>
+                    <option value="5">Quinto semestre o superior</option>
+                </select>
+                <span class="error-message">Por favor seleccione su semestre</span>
+            </div>
+
+            <button type="submit" class="submit-btn">Inscribirse al Curso</button>
+            <div class="success-message">¡Inscripción realizada con éxito!</div>
+        </form>
+    </section>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const successMessage = document.querySelector('.success-message');
+            successMessage.style.display = 'block';
+            this.reset();
+            document.querySelectorAll('.sub-card.selected').forEach(card => {
+                card.classList.remove('selected');
+            });
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+
+</html> 
