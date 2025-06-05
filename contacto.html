@@ -5,25 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Intersemestrales UPTC</title>
     <link rel="stylesheet" href="stylePrincipal.css">
+    <style>
+        .contacto-container {
+            max-width: 500px;
+            margin: 3rem auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+            padding: 2.5rem 2rem 2rem 2rem;
+            text-align: center;
+        }
+        .contacto-container h1 {
+            color: #2C3E50;
+            margin-bottom: 1.2rem;
+        }
+        .contacto-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0 0 0;
+        }
+        .contacto-list li {
+            font-size: 1.1rem;
+            color: #34495E;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            justify-content: center;
+        }
+        .contacto-list a {
+            color: #2C3E50;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .contacto-icon {
+            font-size: 1.3rem;
+            color: #FFB300;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="principal.html">Inicio</a>
-            <a href="acercade.html">Acerca de</a>
-            <a href="inscripcion.html">Inscripción</a>
-            <a href="notas.html">Notas</a>
-            <a href="contacto.html">Contacto</a>
-        </nav>
+    <div class="imagenUptc">
+        <a href="inscripcion.html">
+            <img src="logos/logoUPTC.svg" width="300px">
+        </a>
+    </div>
+    <header class="tittleOne">
+        <h1>Información de Contacto</h1>
+        <h3>¿Tienes dudas o necesitas ayuda? Contáctanos</h3>
     </header>
-    <main>
-        <h1>Contacto</h1>
-        <p>Para más información o soporte, puedes comunicarte con el administrador del sistema:</p>
-        <ul>
-            <li>Email: <a href="mailto:jose.garzon10@uptc.edu.co">jose.garzon10@uptc.edu.co</a></li>
-            <li>Teléfono: 317 823 23 45</li>
-            <li>Dirección: Calle 123 #45-67, Tunja, Boyacá</li>
+    <section class="contacto-container">
+        <h1>Contacto Secretaría Académica</h1>
+        <ul class="contacto-list">
+            <li><span class="contacto-icon"><i class="fas fa-envelope"></i></span>Email: <a href="mailto:jose.garzon10@uptc.edu.co">jose.garzon10@uptc.edu.co</a></li>
+            <li><span class="contacto-icon"><i class="fas fa-phone"></i></span>Teléfono: <a href="tel:3178232345">317 823 23 45</a></li>
+            <li><span class="contacto-icon"><i class="fas fa-map-marker-alt"></i></span>Dirección: Calle 123 #45-67, Tunja, Boyacá</li>
         </ul>
-    </main>
+    </section>
 </body>
 </html> 
