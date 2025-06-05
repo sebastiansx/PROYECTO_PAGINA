@@ -138,20 +138,7 @@
         </form>
     </section>
 
-    <script>
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const successMessage = document.querySelector('.success-message');
-            successMessage.style.display = 'block';
-            this.reset();
-            document.querySelectorAll('.sub-card.selected').forEach(card => {
-                card.classList.remove('selected');
-            });
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 3000);
-        });
-    </script>
+  
 </body>
 
 </html> 
